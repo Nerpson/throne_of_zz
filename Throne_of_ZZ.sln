@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThronesTournamentConsole", "ConsoleApplication2\ThronesTournamentConsole.csproj", "{011B25CA-22E9-48B9-B0E6-CAFE68DB0B1F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6847E0CF-0A3B-4EFD-854E-5AE0899BFF47} = {6847E0CF-0A3B-4EFD-854E-5AE0899BFF47}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntitiesLayer", "ClassLibrary1\EntitiesLayer.csproj", "{6847E0CF-0A3B-4EFD-854E-5AE0899BFF47}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLayer", "BusinessLayer\BusinessLayer.csproj", "{7E2F1D91-EF02-4628-B512-30E190194949}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6847E0CF-0A3B-4EFD-854E-5AE0899BFF47} = {6847E0CF-0A3B-4EFD-854E-5AE0899BFF47}
+		{ADE744E1-E54D-4878-9B65-E4A6FE17811C} = {ADE744E1-E54D-4878-9B65-E4A6FE17811C}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StubDataAccessLayer", "StubDataAccessLayer\StubDataAccessLayer.csproj", "{ADE744E1-E54D-4878-9B65-E4A6FE17811C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6847E0CF-0A3B-4EFD-854E-5AE0899BFF47} = {6847E0CF-0A3B-4EFD-854E-5AE0899BFF47}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{011B25CA-22E9-48B9-B0E6-CAFE68DB0B1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{011B25CA-22E9-48B9-B0E6-CAFE68DB0B1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{011B25CA-22E9-48B9-B0E6-CAFE68DB0B1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{011B25CA-22E9-48B9-B0E6-CAFE68DB0B1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6847E0CF-0A3B-4EFD-854E-5AE0899BFF47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6847E0CF-0A3B-4EFD-854E-5AE0899BFF47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6847E0CF-0A3B-4EFD-854E-5AE0899BFF47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6847E0CF-0A3B-4EFD-854E-5AE0899BFF47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E2F1D91-EF02-4628-B512-30E190194949}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E2F1D91-EF02-4628-B512-30E190194949}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E2F1D91-EF02-4628-B512-30E190194949}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E2F1D91-EF02-4628-B512-30E190194949}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADE744E1-E54D-4878-9B65-E4A6FE17811C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADE744E1-E54D-4878-9B65-E4A6FE17811C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADE744E1-E54D-4878-9B65-E4A6FE17811C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADE744E1-E54D-4878-9B65-E4A6FE17811C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

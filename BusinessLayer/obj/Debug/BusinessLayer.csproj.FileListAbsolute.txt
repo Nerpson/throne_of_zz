@@ -7,3 +7,12 @@ c:\users\aldelahaye1\documents\visual studio 2015\Projects\ConsoleApplication2\B
 c:\users\aldelahaye1\documents\visual studio 2015\Projects\ConsoleApplication2\BusinessLayer\obj\Debug\BusinessLayer.csprojResolveAssemblyReference.cache
 c:\users\aldelahaye1\documents\visual studio 2015\Projects\ConsoleApplication2\BusinessLayer\obj\Debug\BusinessLayer.dll
 c:\users\aldelahaye1\documents\visual studio 2015\Projects\ConsoleApplication2\BusinessLayer\obj\Debug\BusinessLayer.pdb
+C:\Users\aldelahaye1\Documents\visual_project\throne_of_zz\BusinessLayer\bin\Debug\BusinessLayer.dll
+C:\Users\aldelahaye1\Documents\visual_project\throne_of_zz\BusinessLayer\bin\Debug\BusinessLayer.pdb
+C:\Users\aldelahaye1\Documents\visual_project\throne_of_zz\BusinessLayer\bin\Debug\EntitiesLayer.dll
+C:\Users\aldelahaye1\Documents\visual_project\throne_of_zz\BusinessLayer\bin\Debug\StubDataAccessLayer.dll
+C:\Users\aldelahaye1\Documents\visual_project\throne_of_zz\BusinessLayer\bin\Debug\EntitiesLayer.pdb
+C:\Users\aldelahaye1\Documents\visual_project\throne_of_zz\BusinessLayer\bin\Debug\StubDataAccessLayer.pdb
+C:\Users\aldelahaye1\Documents\visual_project\throne_of_zz\BusinessLayer\obj\Debug\BusinessLayer.csprojResolveAssemblyReference.cache
+C:\Users\aldelahaye1\Documents\visual_project\throne_of_zz\BusinessLayer\obj\Debug\BusinessLayer.dll
+C:\Users\aldelahaye1\Documents\visual_project\throne_of_zz\BusinessLayer\obj\Debug\BusinessLayer.pdb

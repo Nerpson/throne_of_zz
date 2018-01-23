@@ -16,7 +16,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLayer", "BusinessLa
 		{ADE744E1-E54D-4878-9B65-E4A6FE17811C} = {ADE744E1-E54D-4878-9B65-E4A6FE17811C}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StubDataAccessLayer", "StubDataAccessLayer\StubDataAccessLayer.csproj", "{ADE744E1-E54D-4878-9B65-E4A6FE17811C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "StubDataAccessLayer\DataAccessLayer.csproj", "{ADE744E1-E54D-4878-9B65-E4A6FE17811C}"
 	ProjectSection(ProjectDependencies) = postProject
 		{6847E0CF-0A3B-4EFD-854E-5AE0899BFF47} = {6847E0CF-0A3B-4EFD-854E-5AE0899BFF47}
 	EndProjectSection

@@ -1,0 +1,7 @@
+C:\Users\aldelahaye1\Documents\visual_project\throne_of_zz\StubDataAccessLayer\bin\Debug\StubDataAccessLayer.dll
+C:\Users\aldelahaye1\Documents\visual_project\throne_of_zz\StubDataAccessLayer\bin\Debug\StubDataAccessLayer.pdb
+C:\Users\aldelahaye1\Documents\visual_project\throne_of_zz\StubDataAccessLayer\bin\Debug\EntitiesLayer.dll
+C:\Users\aldelahaye1\Documents\visual_project\throne_of_zz\StubDataAccessLayer\bin\Debug\EntitiesLayer.pdb
+C:\Users\aldelahaye1\Documents\visual_project\throne_of_zz\StubDataAccessLayer\obj\Debug\DataAccessLayer.csprojResolveAssemblyReference.cache
+C:\Users\aldelahaye1\Documents\visual_project\throne_of_zz\StubDataAccessLayer\obj\Debug\StubDataAccessLayer.dll
+C:\Users\aldelahaye1\Documents\visual_project\throne_of_zz\StubDataAccessLayer\obj\Debug\StubDataAccessLayer.pdb

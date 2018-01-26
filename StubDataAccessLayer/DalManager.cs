@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using EntitiesLayer;
+using System.IO;
 
 namespace DataAccessLayer
 {
@@ -15,7 +13,7 @@ namespace DataAccessLayer
 
         private DalManager()
         {
-            _manager = new SQLDalManager(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\aldelahaye1\Documents\Visual Studio 2015\Projects\throne_of_zz\zzdb.mdf;Integrated Security=True;Connect Timeout=30");
+            _manager = new SQLDalManager(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename="+ Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDi‌​rectory, "..\\")) + @"zzdb.mdf;Integrated Security=True;Connect Timeout=30");
         }
 
         public static DalManager GetInstance()

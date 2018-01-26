@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using EntitiesLayer;
 
-namespace StubDataAccessLayer
+namespace DataAccessLayer
 {
-    class DalManager : IDalManager
+    public class DalManager : IDalManager
     {
         private static DalManager _instance;
         private IDalManager _manager;
@@ -15,7 +15,7 @@ namespace StubDataAccessLayer
 
         private DalManager()
         {
-
+            _manager = new SQLDalManager(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\aldelahaye1\Documents\Visual Studio 2015\Projects\throne_of_zz\zzdb.mdf;Integrated Security=True;Connect Timeout=30");
         }
 
         public static DalManager GetInstance()
@@ -37,7 +37,7 @@ namespace StubDataAccessLayer
 
         public IEnumerable<House> getAllBigHouses()
         {
-            throw new NotImplementedException();
+            return _manager.getAllBigHouses();
         }
 
         public IEnumerable<Territory> getAllTerritories()

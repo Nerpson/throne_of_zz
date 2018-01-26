@@ -2,4 +2,5 @@
 *.user
 bin
 obj
-db_log.ldf
+.vs/
+packages/

@@ -40,9 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DalManager.cs" />
     <Compile Include="IDalManager.cs" />
-    <Compile Include="DatabaseDalManager.cs" />
+    <Compile Include="OracleDalManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SQLDalManager.cs" />
     <Compile Include="StubDalManager.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using EntitiesLayer;
 
-namespace StubDataAccessLayer
+namespace DataAccessLayer
 {
     public class StubDalManager : IDalManager
     {

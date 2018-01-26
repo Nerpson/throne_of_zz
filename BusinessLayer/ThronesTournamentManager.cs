@@ -9,7 +9,7 @@ namespace BusinessLayer
     public class ThronesTournamentManager
     {
 
-        private StubDataAccessLayer.IDalManager _dal= new StubDataAccessLayer.StubDalManager();
+        private DataAccessLayer.IDalManager _dal= DataAccessLayer.DalManager.GetInstance();
         public IEnumerable<String> getHousesNames()
         {
             var houses = _dal.getAllHouses();

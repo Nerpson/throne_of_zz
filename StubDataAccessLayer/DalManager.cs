@@ -16,6 +16,12 @@ namespace DataAccessLayer
             _manager = new SQLDalManager(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename="+ Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDi‌​rectory, "..\\")) + @"zzdb.mdf;Integrated Security=True;Connect Timeout=30");
         }
 
+        public static DalManager Instance {
+            get {
+                return GetInstance();
+            }
+        }
+
         public static DalManager GetInstance()
         {
             lock (mutex)

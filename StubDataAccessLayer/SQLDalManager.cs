@@ -37,10 +37,10 @@ namespace DataAccessLayer
             List<House> houses = new List<House>();
 
             DataTable result = selectRequest("SELECT * FROM house WHERE nbUnit > 500");
+            //Todo no foreach
             foreach (DataRow row in result.Rows)
             {
-                // ... Write value of first field as integer.
-                houses.Add(new House(row.Field<string>(1), row.Field<int>(2)));
+                houses.Add(new House(row.Field<string>(1), row.Field<int>(2)) { ID = row.Field<int>(0) });
             }
 
             return houses;

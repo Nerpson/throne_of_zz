@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EntitiesLayer
 {
-    public class House
+    public class House : EntityObject
     {
         public LinkedList<Character> Housers { get; set; }
         public String Name { get; set; }
@@ -17,14 +17,10 @@ namespace EntitiesLayer
             this.NumberOfUnits = nbUnit;
             Housers = new LinkedList<Character>();
         }
-        public int NumberOfUnits                                {
-            get
-            ;
-            set
-            ;
-                                                                  }
-        override
-        public String ToString()
+
+        public int NumberOfUnits{ get; set; }
+
+        override public String ToString()
         {
             var builder = new StringBuilder();
             builder.Append("House:");

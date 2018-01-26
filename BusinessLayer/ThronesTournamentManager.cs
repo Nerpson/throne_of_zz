@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DataAccessLayer;
+using EntitiesLayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,19 +10,16 @@ namespace BusinessLayer
 {
     public class ThronesTournamentManager
     {
-
-        private DataAccessLayer.IDalManager _dal= DataAccessLayer.DalManager.GetInstance();
+        private IDalManager _dal = DalManager.GetInstance(); 
         public IEnumerable<String> getHousesNames()
         {
             var houses = _dal.getAllHouses();
             var ret = houses.Select(x => x.Name);
             return ret;
         }
-        public IEnumerable<String> getBigHousesNames()
+        public IEnumerable<House> getBigHouses()
         {
-            var houses = _dal.getAllBigHouses();
-            var ret = houses.Select(x => x.Name);
-            return ret;
+            return _dal.getAllBigHouses();
         }
         public IEnumerable<String> getStrongCharacter()
         {

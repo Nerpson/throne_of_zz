@@ -22,6 +22,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "StubData
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThroneAPI", "ThroneAPI\ThroneAPI.csproj", "{EB04283B-F828-4981-A308-67FE2BE2BFDB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7E2F1D91-EF02-4628-B512-30E190194949} = {7E2F1D91-EF02-4628-B512-30E190194949}
+		{6847E0CF-0A3B-4EFD-854E-5AE0899BFF47} = {6847E0CF-0A3B-4EFD-854E-5AE0899BFF47}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

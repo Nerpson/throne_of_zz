@@ -1,7 +1,0 @@
-c:\users\aldelahaye1\documents\visual studio 2015\Projects\ConsoleApplication2\StubDataAccessLayer\bin\Debug\StubDataAccessLayer.dll
-c:\users\aldelahaye1\documents\visual studio 2015\Projects\ConsoleApplication2\StubDataAccessLayer\bin\Debug\StubDataAccessLayer.pdb
-c:\users\aldelahaye1\documents\visual studio 2015\Projects\ConsoleApplication2\StubDataAccessLayer\bin\Debug\EntitiesLayer.dll
-c:\users\aldelahaye1\documents\visual studio 2015\Projects\ConsoleApplication2\StubDataAccessLayer\bin\Debug\EntitiesLayer.pdb
-c:\users\aldelahaye1\documents\visual studio 2015\Projects\ConsoleApplication2\StubDataAccessLayer\obj\Debug\StubDataAccessLayer.csprojResolveAssemblyReference.cache
-c:\users\aldelahaye1\documents\visual studio 2015\Projects\ConsoleApplication2\StubDataAccessLayer\obj\Debug\StubDataAccessLayer.dll
-c:\users\aldelahaye1\documents\visual studio 2015\Projects\ConsoleApplication2\StubDataAccessLayer\obj\Debug\StubDataAccessLayer.pdb

@@ -16,8 +16,10 @@ namespace DataAccessLayer
             _manager = new SQLDalManager(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename="+ Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDi‌​rectory, "..\\")) + @"zzdb.mdf;Integrated Security=True;Connect Timeout=30");
         }
 
-        public static DalManager Instance {
-            get {
+        public static DalManager Instance
+        {
+            get
+            {
                 return GetInstance();
             }
         }
@@ -46,12 +48,12 @@ namespace DataAccessLayer
 
         public IEnumerable<Territory> getAllTerritories()
         {
-            throw new NotImplementedException();
+            return _manager.getAllTerritories();
         }
 
         public IEnumerable<Character> getAllCharacters()
         {
-            throw new NotImplementedException();
+            return _manager.getAllCharacters();
         }
 
     }

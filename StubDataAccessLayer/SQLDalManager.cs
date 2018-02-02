@@ -48,17 +48,44 @@ namespace DataAccessLayer
 
         public IEnumerable<Character> getAllCharacters()
         {
-            throw new NotImplementedException();
+            List<Character> characters = new List<Character>();
+
+            DataTable result = selectRequest("SELECT * FROM character");
+
+            foreach (DataRow row in result.Rows)
+            {
+                characters.Add(new Character(row.Field<int>(1), row.Field<int>(2), row.Field<string>(3), row.Field<string>(4), row.Field<int>(5)) { ID = row.Field<int>(0) });
+            }
+
+            return characters;
         }
 
         public IEnumerable<House> getAllHouses()
         {
-            throw new NotImplementedException();
+            List<House> houses = new List<House>();
+
+            DataTable result = selectRequest("SELECT * FROM house");
+
+            foreach (DataRow row in result.Rows)
+            {
+                houses.Add(new House(row.Field<string>(1), row.Field<int>(2)) { ID = row.Field<int>(0) });
+            }
+
+            return houses;
         }
 
         public IEnumerable<Territory> getAllTerritories()
         {
-            throw new NotImplementedException();
+            List<Territory> territories = new List<Territory>();
+
+            DataTable result = selectRequest("SELECT * FROM territory");
+
+            foreach (DataRow row in result.Rows)
+            {
+                territories.Add(new Territory(row.Field<TerritoryType>(1)) { ID = row.Field<int>(0) });
+            }
+
+            return territories;
         }
     }
 }

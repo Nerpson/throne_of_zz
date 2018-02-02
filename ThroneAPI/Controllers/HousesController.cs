@@ -21,9 +21,9 @@ namespace ThroneAPI.Controllers
         }
 
         // GET: api/Houses/5
-        public string Get(int id)
+        public IEnumerable<HouseDto> Get(int id)
         {
-            return "value";
+            return _manager.getHouseById().Select(HashSet => HashSet.toDto<HouseDto>());
         }
 
         // POST: api/Houses

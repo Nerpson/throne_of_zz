@@ -9,16 +9,18 @@ namespace ThroneAPI.Controllers
 {
     public class CharactersController : ApiController
     {
+        private ThronesTournamentManager _manager = new ThronesTournamentManager();
+
         // GET api/<controller>
-        public IEnumerable<string> Get()
+        public IEnumerable<CharacterDto> Get()
         {
-            return new string[] { "value1", "value2" };
+            return _manager.getCharacters().Select(h => h.toDto<CharacterDto>());
         }
 
         // GET api/<controller>/5
-        public string Get(int id)
+        public IEnumerable<CharacterDto> Get(int id)
         {
-            return "value";
+            return _manager.getCharacter(id).Select(h => h.toDto<CharacterDto>());
         }
 
         // POST api/<controller>

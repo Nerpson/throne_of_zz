@@ -10,6 +10,7 @@ namespace EntitiesLayer
     {
         public LinkedList<Character> Housers { get; set; }
         public String Name { get; set; }
+        public int NumberOfUnits { get; set; }
 
         public House(String name,int nbUnit)
         {
@@ -17,8 +18,6 @@ namespace EntitiesLayer
             this.NumberOfUnits = nbUnit;
             Housers = new LinkedList<Character>();
         }
-
-        public int NumberOfUnits{ get; set; }
 
         override public String ToString()
         {

@@ -32,19 +32,7 @@ namespace DataAccessLayer
             _connectionString = connectionString;
         }
 
-        public IEnumerable<House> getAllBigHouses()
-        {
-            List<House> houses = new List<House>();
-
-            DataTable result = selectRequest("SELECT * FROM house WHERE nbUnit > 500");
-            //Todo no foreach
-            foreach (DataRow row in result.Rows)
-            {
-                houses.Add(new House(row.Field<string>(1), row.Field<int>(2)) { ID = row.Field<int>(0) });
-            }
-
-            return houses;
-        }
+        // -------- CHARACTERS
 
         public IEnumerable<Character> getAllCharacters()
         {
@@ -60,6 +48,22 @@ namespace DataAccessLayer
             return characters;
         }
 
+        public IEnumerable<Character> getCharacter(int id)
+        {
+            List<Character> characters = new List<Character>();
+
+            DataTable result = selectRequest("SELECT * FROM character WHERE id = " + id);
+
+            foreach (DataRow row in result.Rows)
+            {
+                characters.Add(new Character(row.Field<int>(1), row.Field<int>(2), row.Field<string>(3), row.Field<string>(4), row.Field<int>(5)) { ID = row.Field<int>(0) });
+            }
+
+            return characters;
+        }
+
+        // -------- HOUSES
+
         public IEnumerable<House> getAllHouses()
         {
             List<House> houses = new List<House>();
@@ -74,11 +78,53 @@ namespace DataAccessLayer
             return houses;
         }
 
+        public IEnumerable<House> getAllBigHouses()
+        {
+            List<House> houses = new List<House>();
+
+            DataTable result = selectRequest("SELECT * FROM house WHERE nbUnit > 500");
+            //Todo no foreach
+            foreach (DataRow row in result.Rows)
+            {
+                houses.Add(new House(row.Field<string>(1), row.Field<int>(2)) { ID = row.Field<int>(0) });
+            }
+
+            return houses;
+        }
+
+        public IEnumerable<House> getHouse(int id)
+        {
+            List<House> houses = new List<House>();
+            DataTable result = selectRequest("SELECT * FROM house WHERE id = " + id);
+
+            foreach (DataRow row in result.Rows)
+            {
+                houses.Add(new House(row.Field<string>(1), row.Field<int>(2)) { ID = row.Field<int>(0) });
+            }
+
+            return houses;
+        }
+
+        // -------- TERRITORIES
+
         public IEnumerable<Territory> getAllTerritories()
         {
             List<Territory> territories = new List<Territory>();
 
             DataTable result = selectRequest("SELECT * FROM territory");
+
+            foreach (DataRow row in result.Rows)
+            {
+                territories.Add(new Territory(row.Field<TerritoryType>(1)) { ID = row.Field<int>(0) });
+            }
+
+            return territories;
+        }
+
+        public IEnumerable<Territory> getTerritory(int id)
+        {
+            List<Territory> territories = new List<Territory>();
+            DataTable result = selectRequest("SELECT * FROM territory WHERE id = " + id);
 
             foreach (DataRow row in result.Rows)
             {

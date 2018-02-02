@@ -9,11 +9,14 @@ namespace DataAccessLayer
 {
     public interface IDalManager
     {
+        IEnumerable<House> getHouse(int id);
+        IEnumerable<Territory> getTerritory(int id);
+        IEnumerable<Character> getCharacter(int id);
+
+
         IEnumerable<House> getAllHouses();
         IEnumerable<House> getAllBigHouses();
-
         IEnumerable<Territory> getAllTerritories();
-
         IEnumerable<Character> getAllCharacters();
 
     }

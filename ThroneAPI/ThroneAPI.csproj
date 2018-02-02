@@ -118,8 +118,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CharacterDto.cs" />
     <Compile Include="Models\DtoUtils.cs" />
     <Compile Include="Models\HouseDto.cs" />
+    <Compile Include="Models\TerritoryDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

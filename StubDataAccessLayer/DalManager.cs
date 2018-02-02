@@ -41,7 +41,7 @@ namespace DataAccessLayer
             return _manager.getAllHouses();
         }
 
-        public IEnumerable<House> getHouseById(int id)
+        public IEnumerable<House> getHouse(int id)
         {
             return _manager.getHouse(id);
         }
@@ -56,7 +56,7 @@ namespace DataAccessLayer
             return _manager.getAllTerritories();
         }
 
-        public IEnumerable<Territory> getTerritoryById(int id)
+        public IEnumerable<Territory> getTerritory(int id)
         {
             return _manager.getTerritory(id);
         }
@@ -66,10 +66,9 @@ namespace DataAccessLayer
             return _manager.getAllCharacters();
         }
 
-        public IEnumerable<Character> getCharacterById(int id)
+        public IEnumerable<Character> getCharacter(int id)
         {
             return _manager.getCharacter(id);
         }
-
     }
 }

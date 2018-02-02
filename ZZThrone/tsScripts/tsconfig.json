@@ -7,6 +7,10 @@
     "target": "es5",
     "outDir": "../webappJS"
   },
+  "files": [
+    "./House.ts"
+  ],
+  "compileOnSave": true,
   "exclude": [
     "node_modules",
     "wwwroot"

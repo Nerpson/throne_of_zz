@@ -6,8 +6,4 @@ class HouseTS {
     constructor(id: number) {
         this.ID = id;
     }
-
-    afficher() {
-        
-    }
 }

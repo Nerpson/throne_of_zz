@@ -42,37 +42,37 @@ namespace DataAccessLayer
 
         }
 
-        public IEnumerable<House> getAllBigHouses()
+        public IEnumerable<House> GetAllBigHouses()
         {
             return _houses.Where(h => h.NumberOfUnits > 200);
         }
 
-        public IEnumerable<Character> getAllCharacters()
+        public IEnumerable<Character> GetAllCharacters()
         {
             return _chars;
         }
 
-        public IEnumerable<House> getAllHouses()
+        public IEnumerable<House> GetAllHouses()
         {
             return _houses;
         }
 
-        public IEnumerable<Territory> getAllTerritories()
+        public IEnumerable<Territory> GetAllTerritories()
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<House> getHouse(int id)
+        public IEnumerable<House> GetHouse(int id)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Territory> getTerritory(int id)
+        public IEnumerable<Territory> GetTerritory(int id)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Character> getCharacter(int id)
+        public IEnumerable<Character> GetCharacter(int id)
         {
             throw new NotImplementedException();
         }

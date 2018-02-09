@@ -9,15 +9,15 @@ namespace DataAccessLayer
 {
     public interface IDalManager
     {
-        IEnumerable<House> getHouse(int id);
-        IEnumerable<Territory> getTerritory(int id);
-        IEnumerable<Character> getCharacter(int id);
+        IEnumerable<House> GetHouse(int id);
+        IEnumerable<Territory> GetTerritory(int id);
+        IEnumerable<Character> GetCharacter(int id);
 
 
-        IEnumerable<House> getAllHouses();
-        IEnumerable<House> getAllBigHouses();
-        IEnumerable<Territory> getAllTerritories();
-        IEnumerable<Character> getAllCharacters();
+        IEnumerable<House> GetAllHouses();
+        IEnumerable<House> GetAllBigHouses();
+        IEnumerable<Territory> GetAllTerritories();
+        IEnumerable<Character> GetAllCharacters();
 
         int PostHouse(House house);
         int PostTerritory(Territory territory);

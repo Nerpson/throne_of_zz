@@ -9,37 +9,37 @@ namespace DataAccessLayer
 {
     class OracleDalManager : IDalManager
     {
-        public IEnumerable<House> getAllBigHouses()
+        public IEnumerable<House> GetAllBigHouses()
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Character> getAllCharacters()
+        public IEnumerable<Character> GetAllCharacters()
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<House> getAllHouses()
+        public IEnumerable<House> GetAllHouses()
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Territory> getAllTerritories()
+        public IEnumerable<Territory> GetAllTerritories()
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Character> getCharacter(int id)
+        public IEnumerable<Character> GetCharacter(int id)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<House> getHouse(int id)
+        public IEnumerable<House> GetHouse(int id)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Territory> getTerritory(int id)
+        public IEnumerable<Territory> GetTerritory(int id)
         {
             throw new NotImplementedException();
         }

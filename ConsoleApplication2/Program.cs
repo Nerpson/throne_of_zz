@@ -14,7 +14,7 @@ namespace ConsoleApplication2
         static void displayHouses()
         {
             Console.WriteLine("-----Houses----");
-            foreach (var val in manager.getBigHouses())
+            foreach (var val in manager.GetBigHouses())
             {
                 Console.WriteLine(val.Name);
             }
@@ -24,7 +24,7 @@ namespace ConsoleApplication2
         static void displayHeroes()
         {
             Console.WriteLine("-----Characters----");
-            foreach (var val in manager.getStrongCharacter())
+            foreach (var val in manager.GetStrongCharacter())
             {
                 Console.WriteLine(val);
             }

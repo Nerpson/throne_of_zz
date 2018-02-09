@@ -18,7 +18,7 @@ namespace ZZThrone.Controllers
         // GET: api/Houses
         public IEnumerable<HouseDto> Get()
         {
-            return _manager.getBigHouses().Select(h => h.toDto<HouseDto>());
+            return _manager.GetBigHouses().Select(h => h.toDto<HouseDto>());
         }
 
         // GET: api/Houses/5

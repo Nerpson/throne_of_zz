@@ -12,6 +12,8 @@ namespace EntitiesLayer
         public String Name { get; set; }
         public int NumberOfUnits { get; set; }
 
+        public House() { }
+
         public House(String name,int nbUnit)
         {
             this.Name = name;

@@ -39,19 +39,19 @@ namespace DataAccessLayer
 
         #region House
 
-        public IEnumerable<House> getAllHouses()
+        public IEnumerable<House> GetAllHouses()
         {
-            return _manager.getAllHouses();
+            return _manager.GetAllHouses();
         }
         
-        public IEnumerable<House> getHouse(int id)
+        public IEnumerable<House> GetHouse(int id)
         {
-            return _manager.getHouse(id);
+            return _manager.GetHouse(id);
         }
 
-        public IEnumerable<House> getAllBigHouses()
+        public IEnumerable<House> GetAllBigHouses()
         {
-            return _manager.getAllBigHouses();
+            return _manager.GetAllBigHouses();
         }
         public int PostHouse(House house)
         {
@@ -72,14 +72,14 @@ namespace DataAccessLayer
 
         #region Territory
 
-        public IEnumerable<Territory> getAllTerritories()
+        public IEnumerable<Territory> GetAllTerritories()
         {
-            return _manager.getAllTerritories();
+            return _manager.GetAllTerritories();
         }
         
-        public IEnumerable<Territory> getTerritory(int id)
+        public IEnumerable<Territory> GetTerritory(int id)
         {
-            return _manager.getTerritory(id);
+            return _manager.GetTerritory(id);
         }
 
         public int PostTerritory(Territory territory)
@@ -101,14 +101,14 @@ namespace DataAccessLayer
 
         #region Character
 
-        public IEnumerable<Character> getAllCharacters()
+        public IEnumerable<Character> GetAllCharacters()
         {
-            return _manager.getAllCharacters();
+            return _manager.GetAllCharacters();
         }
 
-        public IEnumerable<Character> getCharacter(int id)
+        public IEnumerable<Character> GetCharacter(int id)
         {
-            return _manager.getCharacter(id);
+            return _manager.GetCharacter(id);
         }
 
         public int PostCharacter(Character character)

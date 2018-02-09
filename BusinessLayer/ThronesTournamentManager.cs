@@ -14,25 +14,25 @@ namespace BusinessLayer
 
         #region House
 
-        public IEnumerable<String> getHousesNames()
+        public IEnumerable<String> GetHousesNames()
         {
-            var houses = _dal.getAllHouses();
+            var houses = _dal.GetAllHouses();
             var ret = houses.Select(x => x.Name);
             return ret;
         }
-        public IEnumerable<House> getBigHouses()
+        public IEnumerable<House> GetBigHouses()
         {
-            return _dal.getAllBigHouses();
+            return _dal.GetAllBigHouses();
         }
 
-        public IEnumerable<House> getAllHouses()
+        public IEnumerable<House> GetAllHouses()
         {
-            return _dal.getAllHouses();
+            return _dal.GetAllHouses();
         }
 
-        public IEnumerable<House> getHouseById(int id)
+        public IEnumerable<House> GetHouseById(int id)
         {
-            return _dal.getHouse(id);
+            return _dal.GetHouse(id);
         }
 
         public int PostHouse(House house)
@@ -54,21 +54,21 @@ namespace BusinessLayer
 
         #region Character
 
-        public IEnumerable<String> getStrongCharacter()
+        public IEnumerable<String> GetStrongCharacter()
         {
-            var houses = _dal.getAllCharacters();
+            var houses = _dal.GetAllCharacters();
             var ret = houses.Where(c => c.Pv>=50 && c.Bravoury>=3).Select(x => String.Format("{0} {1}",x.FirstName,x.LastName));
             return ret;
         }
 
-        public IEnumerable<Character> getAllCharacters()
+        public IEnumerable<Character> GetAllCharacters()
         {
-            return _dal.getAllCharacters();
+            return _dal.GetAllCharacters();
         }
 
-        public IEnumerable<Character> getCharacterById(int id)
+        public IEnumerable<Character> GetCharacterById(int id)
         {
-            return _dal.getCharacter(id);
+            return _dal.GetCharacter(id);
         }
 
         public int PutTerritory(int id, Territory territory)
@@ -84,13 +84,13 @@ namespace BusinessLayer
 
         #region Territory
 
-        public IEnumerable<Territory> getAllTerritories()
+        public IEnumerable<Territory> GetAllTerritories()
         {
-            return _dal.getAllTerritories();
+            return _dal.GetAllTerritories();
         }
-        public IEnumerable<Territory> getTerritoryById(int id)
+        public IEnumerable<Territory> GetTerritoryById(int id)
         {
-            return _dal.getTerritory(id);
+            return _dal.GetTerritory(id);
         }
 
         public int DeleteTerritory(int id)

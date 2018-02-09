@@ -17,25 +17,25 @@ namespace ThroneAPI.Controllers
         // GET: api/Houses
         public IEnumerable<HouseDto> Get()
         {
-            return _manager.getBigHouses().Select(h => h.toDto<HouseDto>());
+            return _manager.GetBigHouses().Select(h => h.ToDto<HouseDto>());
         }
 
         // GET: api/Houses/5
         public IEnumerable<HouseDto> Get(int id)
         {
-            return _manager.getHouseById(id).Select(HashSet => HashSet.toDto<HouseDto>());
+            return _manager.GetHouseById(id).Select(HashSet => HashSet.ToDto<HouseDto>());
         }
 
         // POST: api/Houses
         public void Post([FromBody]HouseDto house)
         {
-            _manager.PostHouse(house.toDto<House>());
+            _manager.PostHouse(house.ToDto<House>());
         }
 
         // PUT: api/Houses/5
         public void Put(int id, [FromBody]HouseDto house)
         {
-            _manager.PutHouse(id, house.toDto<House>());
+            _manager.PutHouse(id, house.ToDto<House>());
         }
 
         // DELETE: api/Houses/5

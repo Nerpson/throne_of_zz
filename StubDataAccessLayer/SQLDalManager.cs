@@ -57,7 +57,7 @@ namespace DataAccessLayer
 
         #region Character
 
-        public IEnumerable<Character> getAllCharacters()
+        public IEnumerable<Character> GetAllCharacters()
         {
             List<Character> characters = new List<Character>();
 
@@ -71,7 +71,7 @@ namespace DataAccessLayer
             return characters;
         }
 
-        public IEnumerable<Character> getCharacter(int id)
+        public IEnumerable<Character> GetCharacter(int id)
         {
             List<Character> characters = new List<Character>();
 
@@ -117,7 +117,7 @@ namespace DataAccessLayer
 
         #region House
 
-        public IEnumerable<House> getAllHouses()
+        public IEnumerable<House> GetAllHouses()
         {
             List<House> houses = new List<House>();
 
@@ -131,7 +131,7 @@ namespace DataAccessLayer
             return houses;
         }
 
-        public IEnumerable<House> getAllBigHouses()
+        public IEnumerable<House> GetAllBigHouses()
         {
             List<House> houses = new List<House>();
 
@@ -145,7 +145,7 @@ namespace DataAccessLayer
             return houses;
         }
 
-        public IEnumerable<House> getHouse(int id)
+        public IEnumerable<House> GetHouse(int id)
         {
             List<House> houses = new List<House>();
             DataTable result = selectRequest("SELECT * FROM house WHERE id = " + id);
@@ -187,7 +187,7 @@ namespace DataAccessLayer
 
         #region Territory
 
-        public IEnumerable<Territory> getAllTerritories()
+        public IEnumerable<Territory> GetAllTerritories()
         {
             List<Territory> territories = new List<Territory>();
 
@@ -201,7 +201,7 @@ namespace DataAccessLayer
             return territories;
         }
 
-        public IEnumerable<Territory> getTerritory(int id)
+        public IEnumerable<Territory> GetTerritory(int id)
         {
             List<Territory> territories = new List<Territory>();
             DataTable result = selectRequest("SELECT * FROM territory WHERE id = " + id);

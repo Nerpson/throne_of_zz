@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EntitiesLayer
 {
-    public class Territory
+    public class Territory : EntityObject
     {
         public TerritoryType TerritoryType;
 

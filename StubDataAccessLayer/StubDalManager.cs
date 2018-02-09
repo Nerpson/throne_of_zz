@@ -61,5 +61,20 @@ namespace DataAccessLayer
         {
             throw new NotImplementedException();
         }
+
+        public IEnumerable<House> getHouse(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<Territory> getTerritory(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<Character> getCharacter(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -10,5 +10,6 @@ namespace ThroneAPI.Models
         public int ID { get; set; }
         public string Name { get; set; }
         public int NumberOfUnits { get; set; }
+        // TODO public LinkedList<Character> Housers { get; set; }
     }
 }

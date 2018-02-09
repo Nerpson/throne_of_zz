@@ -76,5 +76,10 @@ namespace DataAccessLayer
         {
             throw new NotImplementedException();
         }
+
+        public int PostHouse(House house)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

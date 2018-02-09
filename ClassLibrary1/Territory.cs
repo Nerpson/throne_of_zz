@@ -6,12 +6,18 @@ using System.Threading.Tasks;
 
 namespace EntitiesLayer
 {
-    public class Territory
+    public class Territory : EntityObject
     {
         public TerritoryType TerritoryType;
-
-        public Territory(TerritoryType territoryType)
+        public String Name
         {
+            get;
+            set;
+        }
+
+        public Territory(String name,TerritoryType territoryType)
+        {
+            Name = name;
             TerritoryType = territoryType;
         }
 

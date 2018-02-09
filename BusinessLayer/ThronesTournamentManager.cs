@@ -10,7 +10,10 @@ namespace BusinessLayer
 {
     public class ThronesTournamentManager
     {
-        private IDalManager _dal = DalManager.GetInstance(); 
+        private IDalManager _dal = DalManager.GetInstance();
+
+        #region House
+
         public IEnumerable<String> getHousesNames()
         {
             var houses = _dal.getAllHouses();
@@ -20,31 +23,6 @@ namespace BusinessLayer
         public IEnumerable<House> getBigHouses()
         {
             return _dal.getAllBigHouses();
-        }
-        public IEnumerable<String> getStrongCharacter()
-        {
-            var houses = _dal.getAllCharacters();
-            var ret = houses.Where(c => c.Pv>=50 && c.Bravoury>=3).Select(x => String.Format("{0} {1}",x.FirstName,x.LastName));
-            return ret;
-        }
-
-        public IEnumerable<Character> getAllCharacters()
-        {
-            return _dal.getAllCharacters();
-        }
-
-        public IEnumerable<Character> getCharacterById(int id)
-        {
-            return _dal.getCharacter(id);
-        }
-
-        public IEnumerable<Territory> getAllTerritories()
-        {
-            return _dal.getAllTerritories();
-        }
-        public IEnumerable<Territory> getTerritoryById(int id)
-        {
-            return _dal.getTerritory(id);
         }
 
         public IEnumerable<House> getAllHouses()
@@ -71,5 +49,59 @@ namespace BusinessLayer
         {
             return _dal.DeleteHouse(id);
         }
+
+        #endregion
+
+        #region Character
+
+        public IEnumerable<String> getStrongCharacter()
+        {
+            var houses = _dal.getAllCharacters();
+            var ret = houses.Where(c => c.Pv>=50 && c.Bravoury>=3).Select(x => String.Format("{0} {1}",x.FirstName,x.LastName));
+            return ret;
+        }
+
+        public IEnumerable<Character> getAllCharacters()
+        {
+            return _dal.getAllCharacters();
+        }
+
+        public IEnumerable<Character> getCharacterById(int id)
+        {
+            return _dal.getCharacter(id);
+        }
+
+        public int PutTerritory(int id, Territory territory)
+        {
+            return PutTerritory(id, territory);
+        }
+        public int PutCharacter(int id, Character character)
+        {
+            return PutCharacter(id, character);
+        }
+
+        #endregion
+
+        #region Territory
+
+        public IEnumerable<Territory> getAllTerritories()
+        {
+            return _dal.getAllTerritories();
+        }
+        public IEnumerable<Territory> getTerritoryById(int id)
+        {
+            return _dal.getTerritory(id);
+        }
+
+        public int DeleteTerritory(int id)
+        {
+            return DeleteTerritory(id);
+        }
+        public int DeleteCharacter(int id)
+        {
+            return DeleteCharacter(id);
+        }
+
+        #endregion
     }
 }

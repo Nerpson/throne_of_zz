@@ -37,7 +37,9 @@ namespace DataAccessLayer
             return _instance;
         }
 
-       public IEnumerable<House> getAllHouses()
+        #region House
+
+        public IEnumerable<House> getAllHouses()
         {
             return _manager.getAllHouses();
         }
@@ -46,31 +48,11 @@ namespace DataAccessLayer
         {
             return _manager.getHouse(id);
         }
+
         public IEnumerable<House> getAllBigHouses()
         {
             return _manager.getAllBigHouses();
         }
-
-        public IEnumerable<Territory> getAllTerritories()
-        {
-            return _manager.getAllTerritories();
-        }
-        
-        public IEnumerable<Territory> getTerritory(int id)
-        {
-            return _manager.getTerritory(id);
-        }
-        
-        public IEnumerable<Character> getAllCharacters()
-        {
-            return _manager.getAllCharacters();
-        }
-
-        public IEnumerable<Character> getCharacter(int id)
-        {
-            return _manager.getCharacter(id);
-        }
-
         public int PostHouse(House house)
         {
             return _manager.PostHouse(house);
@@ -85,5 +67,65 @@ namespace DataAccessLayer
         {
             return _manager.DeleteHouse(id);
         }
+
+        #endregion
+
+        #region Territory
+
+        public IEnumerable<Territory> getAllTerritories()
+        {
+            return _manager.getAllTerritories();
+        }
+        
+        public IEnumerable<Territory> getTerritory(int id)
+        {
+            return _manager.getTerritory(id);
+        }
+
+        public int PostTerritory(Territory territory)
+        {
+            return _manager.PostTerritory(territory);
+        }
+
+        public int PutTerritory(int id, Territory territory)
+        {
+            return _manager.PutTerritory(id, territory);
+        }
+
+        public int DeleteTerritory(int id)
+        {
+            return _manager.DeleteTerritory(id);
+        }
+
+        #endregion
+
+        #region Character
+
+        public IEnumerable<Character> getAllCharacters()
+        {
+            return _manager.getAllCharacters();
+        }
+
+        public IEnumerable<Character> getCharacter(int id)
+        {
+            return _manager.getCharacter(id);
+        }
+
+        public int PostCharacter(Character character)
+        {
+            return _manager.PostCharacter(character);
+        }
+
+        public int PutCharacter(int id, Character character)
+        {
+            return _manager.PutCharacter(id, character);
+        }
+        
+        public int DeleteCharacter(int id)
+        {
+            return _manager.DeleteCharacter(id);
+        }
+
+        #endregion
     }
 }

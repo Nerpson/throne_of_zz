@@ -91,5 +91,35 @@ namespace DataAccessLayer
         {
             throw new NotImplementedException();
         }
+
+        public int PostTerritory(Territory territory)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int PostCharacter(Character character)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int PutTerritory(int id, Territory territory)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int PutCharacter(int id, Character character)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int DeleteTerritory(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int DeleteCharacter(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

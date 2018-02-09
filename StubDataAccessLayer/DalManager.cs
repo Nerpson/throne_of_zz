@@ -69,5 +69,10 @@ namespace DataAccessLayer
         {
             return _manager.getCharacter(id);
         }
+
+        public int PostHouse(House house)
+        {
+            return _manager.PostHouse(house);
+        }
     }
 }

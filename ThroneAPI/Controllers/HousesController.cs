@@ -27,8 +27,9 @@ namespace ThroneAPI.Controllers
         }
 
         // POST: api/Houses
-        public void Post([FromBody]string value)
+        public void Post([FromBody]HouseDto house)
         {
+            _manager.PostHouse(house.toDto<House>());
         }
 
         // PUT: api/Houses/5

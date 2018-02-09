@@ -27,6 +27,29 @@ namespace DataAccessLayer
             return dataTable;
         }
 
+        private int UpdateRequest(string request, DataTable dataTable)
+        {
+            int result = 0;
+
+            using (SqlConnection sqlConnection = new SqlConnection(_connectionString))
+            {
+                SqlCommand sqlCommand = new SqlCommand(request, sqlConnection);
+                SqlDataAdapter adapter = new SqlDataAdapter(sqlCommand);
+
+                SqlCommandBuilder builder = new SqlCommandBuilder(adapter);
+
+                adapter.UpdateCommand = builder.GetUpdateCommand();
+                adapter.InsertCommand = builder.GetInsertCommand();
+                adapter.DeleteCommand = builder.GetDeleteCommand();
+
+                adapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+
+                result = adapter.Update(dataTable);
+            }
+
+            return result;
+        }
+
         public SQLDalManager(String connectionString)
         {
             _connectionString = connectionString;
@@ -103,6 +126,15 @@ namespace DataAccessLayer
             }
 
             return houses;
+        }
+
+        public int PostHouse(House house)
+        {
+            DataTable dataTable = selectRequest("SELECT * FROM house");
+
+            dataTable.Rows.Add(null, house.Name, house.NumberOfUnits);
+
+            return UpdateRequest("SELECT * FROM house", dataTable);
         }
 
         // -------- TERRITORIES

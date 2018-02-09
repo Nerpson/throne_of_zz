@@ -56,5 +56,10 @@ namespace BusinessLayer
         {
             return _dal.getHouse(id);
         }
+
+        public int PostHouse(House house)
+        {
+            return _dal.PostHouse(house);
+        }
     }
 }

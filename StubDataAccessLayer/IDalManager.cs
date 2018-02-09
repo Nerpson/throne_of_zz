@@ -19,5 +19,6 @@ namespace DataAccessLayer
         IEnumerable<Territory> getAllTerritories();
         IEnumerable<Character> getAllCharacters();
 
+        int PostHouse(House house);
     }
 }

@@ -141,7 +141,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Scripts\House.js.map" />
-    <Content Include="webappJS\House.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -156,7 +155,6 @@
     <Content Include="Web.config" />
     <Content Include="Views\Index\ListHouse.cshtml" />
     <Content Include="tsScripts\tsconfig.json" />
-    <Content Include="webappJS\House.js.map" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -190,6 +188,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\House\" />
+    <Folder Include="webappJS\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BusinessLayer\BusinessLayer.csproj">
@@ -205,6 +204,7 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="tsScripts\Api.ts" />
     <TypeScriptCompile Include="tsScripts\House.ts" />
   </ItemGroup>
   <PropertyGroup>

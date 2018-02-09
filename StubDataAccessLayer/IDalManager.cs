@@ -20,5 +20,9 @@ namespace DataAccessLayer
         IEnumerable<Character> getAllCharacters();
 
         int PostHouse(House house);
+
+        int PutHouse(int id, House house);
+
+        int DeleteHouse(int id);
     }
 }

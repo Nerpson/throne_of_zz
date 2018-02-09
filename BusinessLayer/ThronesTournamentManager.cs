@@ -61,5 +61,15 @@ namespace BusinessLayer
         {
             return _dal.PostHouse(house);
         }
+
+        public int PutHouse(int id, House house)
+        {
+            return _dal.PutHouse(id, house);
+        }
+
+        public int DeleteHouse(int id)
+        {
+            return _dal.DeleteHouse(id);
+        }
     }
 }

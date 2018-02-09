@@ -131,10 +131,23 @@ namespace DataAccessLayer
         public int PostHouse(House house)
         {
             DataTable dataTable = selectRequest("SELECT * FROM house");
-
             dataTable.Rows.Add(null, house.Name, house.NumberOfUnits);
-
             return UpdateRequest("SELECT * FROM house", dataTable);
+        }
+
+        public int PutHouse(int id, House house)
+        {
+            DataTable dataTable = selectRequest("SELECT * FROM house WHERE id = " + id);
+            dataTable.Rows[0][1] = house.Name;
+            dataTable.Rows[0][2] = house.NumberOfUnits;
+            return UpdateRequest("SELECT * FROM house WHERE id = " + id, dataTable);
+        }
+
+        public int DeleteHouse(int id)
+        {
+            DataTable dataTable = selectRequest("SELECT * FROM house WHERE id = " + id);
+            dataTable.Rows.Clear();
+            return UpdateRequest("SELECT * FROM house WHERE id = " + id, dataTable);
         }
 
         // -------- TERRITORIES
@@ -147,7 +160,7 @@ namespace DataAccessLayer
 
             foreach (DataRow row in result.Rows)
             {
-                territories.Add(new Territory(row.Field<TerritoryType>(1)) { ID = row.Field<int>(0) });
+                territories.Add(new Territory(row.Field<string>(1), row.Field<TerritoryType>(2)) { ID = row.Field<int>(0) });
             }
 
             return territories;
@@ -160,7 +173,7 @@ namespace DataAccessLayer
 
             foreach (DataRow row in result.Rows)
             {
-                territories.Add(new Territory(row.Field<TerritoryType>(1)) { ID = row.Field<int>(0) });
+                territories.Add(new Territory(row.Field<string>(1), row.Field<TerritoryType>(2)) { ID = row.Field<int>(0) });
             }
 
             return territories;

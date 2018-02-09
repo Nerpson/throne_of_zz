@@ -23,7 +23,9 @@ interface RequestResult {
     headers: string;
 }
 
-
+/**
+ * Handle all communications with the API
+ */
 class Api {
 
     BaseUrl: string
@@ -32,11 +34,60 @@ class Api {
         this.BaseUrl = baseUrl
     }   
 
-    public getAll(model: string) {
+    /**
+     * Get all the entries for the give model
+     * @param model Name of the model (eg. Houses)
+     */
+    public getAll(model: string): Promise<RequestResult> {
         return this.request('get', model);
     }
 
-    private request(method: 'get' | 'post', url: string, queryParams: any = {}, body: any = null, options: RequestOptions = DEFAULT_REQUEST_OPTIONS) {
+    /**
+     * Get one entry by id
+     * @param model
+     * @param id
+     */
+    public getOne(model: string, id: number): Promise<RequestResult> {
+        return this.request('get', model + "/" + id);
+    }
+
+    /**
+     * Creates an entry
+     * @param model
+     * @param data
+     */
+    public create<T>(model: string, data: T): Promise<RequestResult> {
+        return this.request('post', model, {}, data);
+    }
+
+    /**
+     * Update an entry by id
+     * @param model
+     * @param id
+     * @param data
+     */
+    public update<T>(model: string, id: number, data: T): Promise<RequestResult> {
+        return this.request('put', model + "/" + id, {}, data);
+    }
+
+    /**
+     * Remove an entry by id
+     * @param model
+     * @param id
+     */
+    public delete(model: string, id: number): Promise<RequestResult> {
+        return this.request('delete', model + "/" + id);
+    }
+
+    /**
+     * Low level method to use the API directly
+     * @param method
+     * @param url Only after host part w/o trailing slash (eg. Houses/2)
+     * @param queryParams
+     * @param body
+     * @param options
+     */
+    public request(method: 'get' | 'post' | 'put' | 'delete', url: string, queryParams: any = {}, body: any = null, options: RequestOptions = DEFAULT_REQUEST_OPTIONS): Promise<RequestResult> {
         const headers = options.headers || DEFAULT_REQUEST_OPTIONS.headers;
 
         return new Promise<RequestResult>((resolve, reject) => {
@@ -55,14 +106,22 @@ class Api {
             };
 
             xhr.onerror = evt => {
-                console.error("[API]Error making request");
+                console.error("[API]Error making request")
+                resolve(this.parseError(xhr));
             };
 
+            xhr.ontimeout = evt => {
+                console.error("[API]Request timeout");
+                resolve(this.parseError(xhr));
+            }
 
-            // TODO POST IF
-            xhr.send();
 
-
+            if ((method === 'post' || method === 'put') && body) {
+                xhr.setRequestHeader('Content-Type', 'application/json')
+                xhr.send(JSON.stringify(body))
+            } else {
+                xhr.send();
+            }
         });
     }
 
@@ -88,5 +147,16 @@ class Api {
             data: xhr.responseText,
             json: <T>() => JSON.parse(xhr.responseText) as T,
         }
+    }
+
+    private parseError(xhr: XMLHttpRequest, message?: string): RequestResult {
+        return {
+            ok: false,
+            status: xhr.status,
+            statusText: xhr.statusText,
+            headers: xhr.getAllResponseHeaders(),
+            data: message || xhr.statusText,
+            json: <T>() => JSON.parse(message || xhr.statusText) as T,
+        };
     }
 }

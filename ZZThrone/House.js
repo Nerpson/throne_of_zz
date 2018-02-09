@@ -4,3 +4,4 @@ var HouseTS = (function () {
     }
     return HouseTS;
 }());
+//# sourceMappingURL=House.js.map

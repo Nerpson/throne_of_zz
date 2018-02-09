@@ -13,5 +13,9 @@ namespace ZZThrone.Controllers
         {
             return View();
         }
+        public ActionResult ListHouse()
+        {
+            return View();
+        }
     }
 }

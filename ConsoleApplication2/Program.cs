@@ -14,7 +14,7 @@ namespace ConsoleApplication2
         static void displayHouses()
         {
             Console.WriteLine("-----Houses----");
-            foreach (var val in manager.getBigHousesNames())
+            foreach (var val in manager.getBigHouses())
             {
                 Console.WriteLine(val);
             }

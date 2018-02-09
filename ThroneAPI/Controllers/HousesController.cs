@@ -33,13 +33,15 @@ namespace ThroneAPI.Controllers
         }
 
         // PUT: api/Houses/5
-        public void Put(int id, [FromBody]string value)
+        public void Put(int id, [FromBody]HouseDto house)
         {
+            _manager.PutHouse(id, house.toDto<House>());
         }
 
         // DELETE: api/Houses/5
         public void Delete(int id)
         {
+            _manager.DeleteHouse(id);
         }
     }
 }

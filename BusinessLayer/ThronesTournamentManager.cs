@@ -10,7 +10,10 @@ namespace BusinessLayer
 {
     public class ThronesTournamentManager
     {
-        private IDalManager _dal = DalManager.GetInstance(); 
+        private IDalManager _dal = DalManager.GetInstance();
+
+        #region House
+
         public IEnumerable<String> getHousesNames()
         {
             var houses = _dal.getAllHouses();
@@ -21,6 +24,36 @@ namespace BusinessLayer
         {
             return _dal.getAllBigHouses();
         }
+
+        public IEnumerable<House> getAllHouses()
+        {
+            return _dal.getAllHouses();
+        }
+
+        public IEnumerable<House> getHouseById(int id)
+        {
+            return _dal.getHouse(id);
+        }
+
+        public int PostHouse(House house)
+        {
+            return _dal.PostHouse(house);
+        }
+
+        public int PutHouse(int id, House house)
+        {
+            return _dal.PutHouse(id, house);
+        }
+
+        public int DeleteHouse(int id)
+        {
+            return _dal.DeleteHouse(id);
+        }
+
+        #endregion
+
+        #region Character
+
         public IEnumerable<String> getStrongCharacter()
         {
             var houses = _dal.getAllCharacters();
@@ -38,6 +71,19 @@ namespace BusinessLayer
             return _dal.getCharacter(id);
         }
 
+        public int PutTerritory(int id, Territory territory)
+        {
+            return PutTerritory(id, territory);
+        }
+        public int PutCharacter(int id, Character character)
+        {
+            return PutCharacter(id, character);
+        }
+
+        #endregion
+
+        #region Territory
+
         public IEnumerable<Territory> getAllTerritories()
         {
             return _dal.getAllTerritories();
@@ -47,19 +93,15 @@ namespace BusinessLayer
             return _dal.getTerritory(id);
         }
 
-        public IEnumerable<House> getAllHouses()
+        public int DeleteTerritory(int id)
         {
-            return _dal.getAllHouses();
+            return DeleteTerritory(id);
+        }
+        public int DeleteCharacter(int id)
+        {
+            return DeleteCharacter(id);
         }
 
-        public IEnumerable<House> getHouseById(int id)
-        {
-            return _dal.getHouse(id);
-        }
-
-        public int PostHouse(House house)
-        {
-            return _dal.PostHouse(house);
-        }
+        #endregion
     }
 }

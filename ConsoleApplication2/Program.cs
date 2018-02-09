@@ -16,7 +16,7 @@ namespace ConsoleApplication2
             Console.WriteLine("-----Houses----");
             foreach (var val in manager.getBigHouses())
             {
-                Console.WriteLine(val);
+                Console.WriteLine(val.Name);
             }
             
         }

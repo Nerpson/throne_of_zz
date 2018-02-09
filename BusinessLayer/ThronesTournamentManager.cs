@@ -28,5 +28,33 @@ namespace BusinessLayer
             return ret;
         }
 
+        public IEnumerable<Character> getAllCharacters()
+        {
+            return _dal.getAllCharacters();
+        }
+
+        public IEnumerable<Character> getCharacterById(int id)
+        {
+            return _dal.getCharacter(id);
+        }
+
+        public IEnumerable<Territory> getAllTerritories()
+        {
+            return _dal.getAllTerritories();
+        }
+        public IEnumerable<Territory> getTerritoryById(int id)
+        {
+            return _dal.getTerritory(id);
+        }
+
+        public IEnumerable<House> getAllHouses()
+        {
+            return _dal.getAllHouses();
+        }
+
+        public IEnumerable<House> getHouseById(int id)
+        {
+            return _dal.getHouse(id);
+        }
     }
 }

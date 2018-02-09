@@ -81,5 +81,15 @@ namespace DataAccessLayer
         {
             throw new NotImplementedException();
         }
+
+        public int PutHouse(int id, House house)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int DeleteHouse(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

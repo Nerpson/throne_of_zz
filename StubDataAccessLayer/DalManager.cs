@@ -13,6 +13,7 @@ namespace DataAccessLayer
 
         private DalManager()
         {
+            //_manager = new StubDalManager();
             _manager = new SQLDalManager(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename="+ Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDi‌​rectory, "..\\")) + @"zzdb.mdf;Integrated Security=True;Connect Timeout=30");
         }
 
@@ -73,6 +74,16 @@ namespace DataAccessLayer
         public int PostHouse(House house)
         {
             return _manager.PostHouse(house);
+        }
+
+        public int PutHouse(int id, House house)
+        {
+            return _manager.PutHouse(id, house);
+        }
+
+        public int DeleteHouse(int id)
+        {
+            return _manager.DeleteHouse(id);
         }
     }
 }

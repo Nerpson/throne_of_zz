@@ -13,8 +13,8 @@ namespace DataAccessLayer
 
         private DalManager()
         {
-            _manager = new StubDalManager();
-            //_manager = new SQLDalManager(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename="+ Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDi‌​rectory, "..\\")) + @"zzdb.mdf;Integrated Security=True;Connect Timeout=30");
+           // _manager = new StubDalManager();
+            _manager = new SQLDalManager(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename="+ Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDi‌​rectory, "..\\")) + @"zzdb.mdf;Integrated Security=True;Connect Timeout=30");
         }
 
         public static DalManager Instance
@@ -124,6 +124,56 @@ namespace DataAccessLayer
         public int DeleteCharacter(int id)
         {
             return _manager.DeleteCharacter(id);
+        }
+
+        public IEnumerable<War> GetWar(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<Fight> GetFight(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<War> GetAllWars()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<Fight> GetAllFights()
+        {
+            throw new NotImplementedException();
+        }
+
+        public int PostWar(War war)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int PostFight(Fight fight)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int PutWar(int id, War war)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int PutFight(int id, Fight fight)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int DeleteWar(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int DeleteFight(int id)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion

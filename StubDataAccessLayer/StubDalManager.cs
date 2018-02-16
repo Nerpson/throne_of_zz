@@ -121,5 +121,55 @@ namespace DataAccessLayer
         {
             throw new NotImplementedException();
         }
+
+        public IEnumerable<War> GetWar(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<Fight> GetFight(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<War> GetAllWars()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<Fight> GetAllFights()
+        {
+            throw new NotImplementedException();
+        }
+
+        public int PostWar(War war)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int PostFight(Fight fight)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int PutWar(int id, War war)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int PutFight(int id, Fight fight)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int DeleteWar(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int DeleteFight(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

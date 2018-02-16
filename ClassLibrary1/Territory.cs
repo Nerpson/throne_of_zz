@@ -10,17 +10,15 @@ namespace EntitiesLayer
     {
         public TerritoryType TerritoryType;
         public String Name
-        {
-            get;
-            set;
-        }
+        { get; set; }
+
+        public House Owner
+        { get; set; }
 
         public Territory(String name,TerritoryType territoryType)
         {
             Name = name;
             TerritoryType = territoryType;
         }
-
-        public House Owner { get; set; }
     }
 }

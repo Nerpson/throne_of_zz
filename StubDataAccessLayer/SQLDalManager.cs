@@ -115,6 +115,73 @@ namespace DataAccessLayer
 
         #endregion
 
+        #region Fight
+
+        public IEnumerable<Fight> GetAllFights()
+        {
+            List<Fight> wars = new List<Fight>();
+
+            DataTable result = selectRequest("SELECT * FROM fight");
+
+            foreach (DataRow row in result.Rows)
+            {
+
+                House challenging = GetHouse(row.Field<int>(1)).ElementAt(0);
+                House challenged = GetHouse(row.Field<int>(2)).ElementAt(0);
+                House winning = GetHouse(row.Field<int>(3)).ElementAt(0);
+
+                wars.Add(new Fight(challenging, challenged, winning) { ID = row.Field<int>(0) });
+            }
+
+            return wars;
+        }
+
+        public IEnumerable<Fight> GetFight(int id)
+        {
+            List<Fight> fights = new List<Fight>();
+            DataTable result = selectRequest("SELECT * FROM fight WHERE id = " + id);
+
+            foreach (DataRow row in result.Rows)
+            {
+
+                House challenging = GetHouse(row.Field<int>(1)).ElementAt(0);
+                House challenged = GetHouse(row.Field<int>(2)).ElementAt(0);
+                House winning = GetHouse(row.Field<int>(3)).ElementAt(0);
+
+                fights.Add(new Fight(challenging, challenged, winning) { ID = row.Field<int>(0) });
+            }
+
+            return fights;
+        }
+
+        public int PostFight(Fight fight)
+        {
+            const string req = "SELECT * FROM fight";
+            DataTable dataTable = selectRequest(req);
+            dataTable.Rows.Add(null, fight.HouseChallenging, fight.HouseChallenged, fight.WinningHouse);
+            return UpdateRequest(req, dataTable);
+        }
+
+        public int PutFight(int id, Fight fight)
+        {
+            var req = "SELECT * FROM fight WHERE id = " + id;
+            DataTable dataTable = selectRequest(req);
+            dataTable.Rows[0][1] = fight.HouseChallenging;
+            dataTable.Rows[0][1] = fight.HouseChallenged;
+            dataTable.Rows[0][1] = fight.WinningHouse;
+            return UpdateRequest(req, dataTable);
+        }
+
+        public int DeleteFight(int id)
+        {
+            var req = "SELECT * FROM fight WHERE id = " + id;
+            DataTable dataTable = selectRequest(req);
+            dataTable.Rows.Clear();
+            return UpdateRequest(req, dataTable);
+        }
+
+        #endregion
+
         #region House
 
         public IEnumerable<House> GetAllHouses()
@@ -234,6 +301,61 @@ namespace DataAccessLayer
         public int DeleteTerritory(int id)
         {
             var req = "SELECT * FROM territory WHERE id = " + id;
+            DataTable dataTable = selectRequest(req);
+            dataTable.Rows.Clear();
+            return UpdateRequest(req, dataTable);
+        }
+
+        #endregion
+
+        #region War
+
+        public IEnumerable<War> GetAllWars()
+        {
+            List<War> wars = new List<War>();
+
+            DataTable result = selectRequest("SELECT * FROM war");
+
+            foreach (DataRow row in result.Rows)
+            {
+                wars.Add(new War(row.Field<string>(1)) { ID = row.Field<int>(0) });
+            }
+
+            return wars;
+        }
+
+        public IEnumerable<War> GetWar(int id)
+        {
+            List<War> wars = new List<War>();
+            DataTable result = selectRequest("SELECT * FROM war WHERE id = " + id);
+
+            foreach (DataRow row in result.Rows)
+            {
+                wars.Add(new War(row.Field<string>(1)) { ID = row.Field<int>(0) });
+            }
+
+            return wars;
+        }
+
+        public int PostWar(War war)
+        {
+            const string req = "SELECT * FROM war";
+            DataTable dataTable = selectRequest(req);
+            dataTable.Rows.Add(null, war.Name);
+            return UpdateRequest(req, dataTable);
+        }
+
+        public int PutWar(int id, War war)
+        {
+            var req = "SELECT * FROM war WHERE id = " + id;
+            DataTable dataTable = selectRequest(req);
+            dataTable.Rows[0][1] = war.Name;
+            return UpdateRequest(req, dataTable);
+        }
+
+        public int DeleteWar(int id)
+        {
+            var req = "SELECT * FROM war WHERE id = " + id;
             DataTable dataTable = selectRequest(req);
             dataTable.Rows.Clear();
             return UpdateRequest(req, dataTable);

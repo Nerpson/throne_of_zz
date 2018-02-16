@@ -6,10 +6,22 @@ using System.Threading.Tasks;
 
 namespace EntitiesLayer
 {
-    public class Fight
+    public class Fight : EntityObject
     {
-        private House  _houseChallenging;
-        private House _houseChallenged;
-        private House _winningHouse;
+        public House HouseChallenging
+        { get; set; }
+
+        public House HouseChallenged
+        { get; set; }
+
+        public House WinningHouse
+        { get; set; }
+
+        public Fight(House challenging, House challenged, House winning)
+        {
+            HouseChallenging    = challenging;
+            HouseChallenged     = challenged;
+            WinningHouse        = winning;
+        }
     }
 }

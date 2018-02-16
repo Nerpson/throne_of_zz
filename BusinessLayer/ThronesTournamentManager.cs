@@ -20,6 +20,7 @@ namespace BusinessLayer
             var ret = houses.Select(x => x.Name);
             return ret;
         }
+
         public IEnumerable<House> GetBigHouses()
         {
             return _dal.GetAllBigHouses();
@@ -71,13 +72,19 @@ namespace BusinessLayer
             return _dal.GetCharacter(id);
         }
 
-        public int PutTerritory(int id, Territory territory)
-        {
-            return PutTerritory(id, territory);
-        }
         public int PutCharacter(int id, Character character)
         {
-            return PutCharacter(id, character);
+            return _dal.PutCharacter(id, character);
+        }
+
+        public int PostCharacter(Character character)
+        {
+            return _dal.PostCharacter(character);
+        }
+
+        public int DeleteCharacter(int id)
+        {
+            return _dal.DeleteCharacter(id);
         }
 
         #endregion
@@ -93,13 +100,75 @@ namespace BusinessLayer
             return _dal.GetTerritory(id);
         }
 
+        public int PutTerritory(int id, Territory territory)
+        {
+            return _dal.PutTerritory(id, territory);
+        }
+
+        public int PostTerritory(Territory territory)
+        {
+            return _dal.PostTerritory(territory);
+        }
+
         public int DeleteTerritory(int id)
         {
-            return DeleteTerritory(id);
+            return _dal.DeleteTerritory(id);
         }
-        public int DeleteCharacter(int id)
+
+        #endregion
+
+        #region War
+
+        public IEnumerable<War> GetAllWars()
         {
-            return DeleteCharacter(id);
+            return _dal.GetAllWars();
+        }
+        public IEnumerable<War> GetWarById(int id)
+        {
+            return _dal.GetWar(id);
+        }
+
+        public int PutWar(int id, War war)
+        {
+            return _dal.PutWar(id, war);
+        }
+
+        public int PostWar(War war)
+        {
+            return _dal.PostWar(war);
+        }
+
+        public int DeleteWar(int id)
+        {
+            return _dal.DeleteWar(id);
+        }
+
+        #endregion
+
+        #region Fight
+
+        public IEnumerable<Fight> GetAllFights()
+        {
+            return _dal.GetAllFights();
+        }
+        public IEnumerable<Fight> GetFightById(int id)
+        {
+            return _dal.GetFight(id);
+        }
+
+        public int PutFight(int id, Fight fight)
+        {
+            return _dal.PutFight(id, fight);
+        }
+
+        public int PostFight(Fight fight)
+        {
+            return _dal.PostFight(fight);
+        }
+
+        public int DeleteFight(int id)
+        {
+            return _dal.DeleteFight(id);
         }
 
         #endregion

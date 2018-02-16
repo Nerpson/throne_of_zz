@@ -6,7 +6,6 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using System.Web.Mvc;
 using ZZThrone.Models;
 
 namespace ZZThrone.Controllers
@@ -18,28 +17,31 @@ namespace ZZThrone.Controllers
         // GET: api/Houses
         public IEnumerable<HouseDto> Get()
         {
-            return _manager.GetBigHouses().Select(h => h.toDto<HouseDto>());
+            return _manager.GetBigHouses().Select(h => h.ToDto<HouseDto>());
         }
 
         // GET: api/Houses/5
-        public string Get(int id)
+        public IEnumerable<HouseDto> Get(int id)
         {
-            return "value";
+            return _manager.GetHouseById(id).Select(HashSet => HashSet.ToDto<HouseDto>());
         }
 
         // POST: api/Houses
-        public void Post([FromBody]string value)
+        public void Post([FromBody]HouseDto house)
         {
+            _manager.PostHouse(house.ToDto<House>());
         }
 
         // PUT: api/Houses/5
-        public void Put(int id, [FromBody]string value)
+        public void Put(int id, [FromBody]HouseDto house)
         {
+            _manager.PutHouse(id, house.ToDto<House>());
         }
 
         // DELETE: api/Houses/5
         public void Delete(int id)
         {
+            _manager.DeleteHouse(id);
         }
     }
 }

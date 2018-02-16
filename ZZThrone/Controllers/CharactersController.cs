@@ -1,11 +1,13 @@
-﻿using System;
+﻿using BusinessLayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using ZZThrone.Models;
 
-namespace ThroneAPI.Controllers
+namespace ZZThrone.Controllers
 {
     public class CharactersController : ApiController
     {
@@ -14,13 +16,13 @@ namespace ThroneAPI.Controllers
         // GET api/<controller>
         public IEnumerable<CharacterDto> Get()
         {
-            return _manager.getCharacters().Select(h => h.toDto<CharacterDto>());
+            return _manager.GetAllCharacters().Select(h => h.ToDto<CharacterDto>());
         }
 
         // GET api/<controller>/5
         public IEnumerable<CharacterDto> Get(int id)
         {
-            return _manager.getCharacter(id).Select(h => h.toDto<CharacterDto>());
+            return _manager.GetCharacterById(id).Select(h => h.ToDto<CharacterDto>());
         }
 
         // POST api/<controller>

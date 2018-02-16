@@ -6,7 +6,7 @@ using System.Web;
 
 namespace ZZThrone.Models
 {
-    public class Territory
+    public class TerritoryDto
     {
         public TerritoryType TerritoryType;
         // TODO public House Owner { get; set; }

@@ -17,6 +17,9 @@ namespace EntitiesLayer
         public House WinningHouse
         { get; set; }
 
+        public Fight()
+        { }
+
         public Fight(House challenging, House challenged, House winning)
         {
             HouseChallenging    = challenging;

@@ -13,6 +13,16 @@ namespace DataAccessLayer
     {
         private readonly String _connectionString;
 
+        public DalCache<Character> Characters;
+
+        public DalCache<Fight> Fights;
+
+        public DalCache<House> Houses;
+
+        public DalCache<Territory> Territories;
+
+        public DalCache<War> Wars;
+
         private DataTable selectRequest(string request)
         {
             DataTable dataTable = new DataTable();
@@ -59,34 +69,38 @@ namespace DataAccessLayer
 
         public IEnumerable<Character> GetAllCharacters()
         {
-            List<Character> characters = new List<Character>();
-
-            DataTable result = selectRequest("SELECT * FROM character");
-
-            foreach (DataRow row in result.Rows)
+            if (!Characters.Loaded)
             {
-                characters.Add(new Character(row.Field<int>(1), row.Field<int>(2), row.Field<string>(3), row.Field<string>(4), row.Field<int>(5)) { ID = row.Field<int>(0) });
+                List<Character> characters = new List<Character>();
+
+                DataTable result = selectRequest("SELECT * FROM character");
+
+                foreach (DataRow row in result.Rows)
+                {
+                    characters.Add(new Character(row.Field<int>(1), row.Field<int>(2), row.Field<string>(3), row.Field<string>(4), row.Field<int>(5)) { ID = row.Field<int>(0) });
+                }
+
+                Characters.Data = characters;
             }
 
-            return characters;
+            return Characters.Data;
         }
 
         public IEnumerable<Character> GetCharacter(int id)
         {
-            List<Character> characters = new List<Character>();
+            IEnumerable<Character> characters = GetAllCharacters();
 
-            DataTable result = selectRequest("SELECT * FROM character WHERE id = " + id);
-
-            foreach (DataRow row in result.Rows)
-            {
-                characters.Add(new Character(row.Field<int>(1), row.Field<int>(2), row.Field<string>(3), row.Field<string>(4), row.Field<int>(5)) { ID = row.Field<int>(0) });
-            }
-
-            return characters;
+            return from c in characters
+                   where c.ID == id
+                   select c;
         }
-        
+
         public int PostCharacter(Character character)
         {
+            List<Character> characters = new List<Character>();
+            characters.Add(character);
+            Characters.Data.Concat(characters);
+
             const string req = "SELECT * FROM character";
             DataTable dataTable = selectRequest(req);
             dataTable.Rows.Add(null, character.Bravoury, character.Crazyness, character.FirstName, character.LastName, character.Pv);
@@ -95,6 +109,9 @@ namespace DataAccessLayer
 
         public int PutCharacter(int id, Character character)
         {
+            Character chara = GetCharacter(id).ElementAt(0);
+            chara = character;
+
             var req = "SELECT * FROM character WHERE id = " + id;
             DataTable dataTable = selectRequest(req);
             dataTable.Rows[0][1] = character.Bravoury;

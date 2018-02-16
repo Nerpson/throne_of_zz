@@ -10,5 +10,6 @@ namespace ZZThrone.Models
         public int ID { get; set; }
         public string Name { get; set; }
         public int NumberOfUnits { get; set; }
+        public LinkedList<CharacterDto> Housers { get; set; }
     }
 }

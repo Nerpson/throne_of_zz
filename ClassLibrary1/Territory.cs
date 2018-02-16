@@ -15,6 +15,9 @@ namespace EntitiesLayer
         public House Owner
         { get; set; }
 
+        public Territory()
+        { }
+
         public Territory(String name,TerritoryType territoryType)
         {
             Name = name;

@@ -7,7 +7,7 @@ namespace ZZThrone.Models
 {
     public static class DtoUtils
     {
-        public static D toDto<D>(this object model) where D : new()
+        public static D ToDto<D>(this object model) where D : new()
         {
             D result = new D();
 

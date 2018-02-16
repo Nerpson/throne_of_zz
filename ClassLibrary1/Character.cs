@@ -15,6 +15,9 @@ namespace EntitiesLayer
         public int Pv { get; set; }
         public Dictionary<RelationShipEnum,List<Character>> RelationShips { get; set; }
    
+        public Character()
+        { }
+
         public Character(int bravoury, int crazyness, String fname, String lname, int pv)
         {
             this.Bravoury = bravoury;

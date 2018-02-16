@@ -1,4 +1,5 @@
 ﻿using BusinessLayer;
+using EntitiesLayer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,18 +27,21 @@ namespace ZZThrone.Controllers
         }
 
         // POST api/<controller>
-        public void Post([FromBody]string value)
+        public void Post([FromBody]CharacterDto character)
         {
+            _manager.PostCharacter(character.ToDto<Character>());
         }
 
         // PUT api/<controller>/5
-        public void Put(int id, [FromBody]string value)
+        public void Put(int id, [FromBody]CharacterDto character)
         {
+            _manager.PutCharacter(id, character.ToDto<Character>());
         }
 
         // DELETE api/<controller>/5
         public void Delete(int id)
         {
+            _manager.DeleteCharacter(id);
         }
     }
 }

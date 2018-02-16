@@ -158,7 +158,7 @@ namespace DataAccessLayer
         {
             const string req = "SELECT * FROM fight";
             DataTable dataTable = selectRequest(req);
-            dataTable.Rows.Add(null, fight.HouseChallenging, fight.HouseChallenged, fight.WinningHouse);
+            dataTable.Rows.Add(null, fight.HouseChallenging.ID, fight.HouseChallenged.ID, fight.WinningHouse.ID);
             return UpdateRequest(req, dataTable);
         }
 
@@ -166,9 +166,9 @@ namespace DataAccessLayer
         {
             var req = "SELECT * FROM fight WHERE id = " + id;
             DataTable dataTable = selectRequest(req);
-            dataTable.Rows[0][1] = fight.HouseChallenging;
-            dataTable.Rows[0][1] = fight.HouseChallenged;
-            dataTable.Rows[0][1] = fight.WinningHouse;
+            dataTable.Rows[0][1] = fight.HouseChallenging.ID;
+            dataTable.Rows[0][1] = fight.HouseChallenged.ID;
+            dataTable.Rows[0][1] = fight.WinningHouse.ID;
             return UpdateRequest(req, dataTable);
         }
 

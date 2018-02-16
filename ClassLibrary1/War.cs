@@ -12,6 +12,9 @@ namespace EntitiesLayer
 
         public IEnumerable<Fight> Fights { get; set; }
 
+        public War()
+        { }
+
         public War(String Name)
         {
             this.Name = Name;

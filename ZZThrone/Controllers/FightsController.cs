@@ -44,5 +44,4 @@ namespace ZZThrone.Controllers
             _manager.DeleteFight(id);
         }
     }
-    }
 }

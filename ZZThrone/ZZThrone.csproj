@@ -160,15 +160,20 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\CharactersController.cs" />
+    <Compile Include="Controllers\FightsController.cs" />
     <Compile Include="Controllers\HousesController.cs" />
     <Compile Include="Controllers\IndexController.cs" />
+    <Compile Include="Controllers\TerritoriesController.cs" />
+    <Compile Include="Controllers\WarsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\CharacterDto.cs" />
     <Compile Include="Models\DtoUtils.cs" />
+    <Compile Include="Models\FightDto.cs" />
     <Compile Include="Models\HouseDto.cs" />
     <Compile Include="Models\TerritoryDto.cs" />
+    <Compile Include="Models\WarDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

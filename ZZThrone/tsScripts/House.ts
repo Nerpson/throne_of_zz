@@ -15,6 +15,10 @@ class HouseAPI {
                 });
         });
     }
+
+    public createHouse(data: any): Promise<RequestResult> {
+        return this.api.create(this.model, data);
+    }
 }
 
 class HouseTS {

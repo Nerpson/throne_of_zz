@@ -11,6 +11,9 @@ class HouseAPI {
             });
         });
     }
+    createHouse(data) {
+        return this.api.create(this.model, data);
+    }
 }
 class HouseTS {
     constructor(id) {

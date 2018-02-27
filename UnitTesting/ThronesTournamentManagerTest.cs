@@ -25,7 +25,7 @@ namespace UnitTesting
         }
 
         [TestMethod]
-        public void checkHouses()
+        public void checkHousesDataBase()
         {
             ThronesTournamentManager manager = new ThronesTournamentManager();
             House h = new House("Test1", 10);
@@ -33,14 +33,19 @@ namespace UnitTesting
             int numberBefore = result.Count();
             manager.PostHouse(h);
             result = manager.GetAllHouses();
-            var inserted_house = result.First(house => house.Name == "Test1");
-            
-            Assert.IsNotNull(inserted_house,"A house couldn't be inserted in db");
-            Assert.AreEqual(numberBefore + 1, result.Count(), "The number of house is not correct");
-
-            manager.DeleteHouse(inserted_house.ID);
-            result = manager.GetAllHouses();
-            Assert.AreEqual(numberBefore, result.Count(), "The house couldn't be deleted from db");
+            try
+            {
+                var inserted_house = result.First(house => house.Name.Contains("Test1"));
+                Assert.AreEqual(numberBefore + 1, result.Count(), "The number of house is not correct");
+                manager.DeleteHouse(inserted_house.ID);
+                result = manager.GetAllHouses();
+                Assert.AreEqual(numberBefore, result.Count(), "The house couldn't be deleted from db");
+            }
+            catch(System.InvalidOperationException e)
+            {
+                Assert.Fail("A house couldn't be inserted in db");
+            }
+           
         }
     }
 }

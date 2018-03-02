@@ -17,5 +17,10 @@ namespace ZZThrone.Controllers
         {
             return View();
         }
+
+        public ActionResult NewHouse()
+        {
+            return View();
+        }
     }
 }

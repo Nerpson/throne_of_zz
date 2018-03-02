@@ -13,8 +13,10 @@ namespace DataAccessLayer
 
         private DalManager()
         {
-           // _manager = new StubDalManager();
-            _manager = new SQLDalManager(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename="+ Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDi‌​rectory, "..\\")) + @"zzdb.mdf;Integrated Security=True;Connect Timeout=30");
+            // _manager = new StubDalManager();
+            //_manager = new SQLDalManager(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename="+ Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDi‌​rectory, "..\\")) + @"zzdb.mdf;Integrated Security=True;Connect Timeout=30");
+            // elegant solution doesnt work when called from other place than root directory of project ( ex : unit tests)
+            _manager = new SQLDalManager(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\aldelahaye1\Documents\Visual Studio 2015\Projects\throne_of_zz\zzdb.mdf;Integrated Security=True;Connect Timeout=30");
         }
 
         public static DalManager Instance

@@ -14,6 +14,7 @@ namespace BusinessLayer
 
         #region House
 
+
         public IEnumerable<String> GetHousesNames()
         {
             var houses = _dal.GetAllHouses();
